@@ -73,13 +73,13 @@ public class MultiplexerTimeServer implements Runnable{
             }catch (Exception e){
                 e.printStackTrace();
             }
-            // 多路复用器关闭之后，所有注册在上面的channel和pipe都会自动关闭
-            if (selector != null){
-                try {
-                    selector.close();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
+        }
+        // 多路复用器关闭之后，所有注册在上面的channel和pipe都会自动关闭
+        if (selector != null){
+            try {
+                selector.close();
+            }catch (Exception e){
+                e.printStackTrace();
             }
         }
     }
