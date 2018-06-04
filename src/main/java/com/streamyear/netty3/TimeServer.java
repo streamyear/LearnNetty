@@ -27,6 +27,11 @@ public class TimeServer {
 
 	private void bind(int port) throws InterruptedException {
 		// 配置服务端的NIO线程组
+		/**
+		 * 两个线程组的作用:
+		 * 1、用于服务端接收客户端的连接
+		 * 2、用户进行SocketChannel的网络读写
+		 */
 		NioEventLoopGroup bossGroup = new NioEventLoopGroup();
 		NioEventLoopGroup workGroup = new NioEventLoopGroup();
 		try {
